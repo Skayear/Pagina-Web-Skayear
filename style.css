@@ -1,0 +1,91 @@
+
+/* estilos de textos  */
+
+#text_center{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* estilos en totalidad */
+
+#character_one{
+    background-color: #005399;
+    padding: 5px;
+}
+
+#character_two{
+    background-color: #feda2e;
+    padding: 5px;
+}
+
+#character_three{
+    background-color: #e6e6e677;
+    padding: auto;
+}
+
+#top_basic{
+    padding: 100px;
+}
+
+#background_1{
+    height: auto;
+    background-image: url("images/fondo2b.png");
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position: right right;
+}
+
+nav{
+    background-color: #e6e6e677;
+    padding: auto;
+    margin-bottom: 0.5cm;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    height: auto;
+    background-image: url("images/bitmap.png");
+}
+
+#selector_site{
+    margin: 0.3cm;
+    margin-right: 20cm;
+    padding: auto;
+    background-color:#49484848;
+}
+
+/* estilos del head */
+
+/* estilos del header */
+
+/* estilos del body */
+
+h1+h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#panel_body{
+    background: #fedb2e9c;
+}
+
+/* estilos del footer */
+
+#reference_socialnet{
+    padding: auto;
+    margin-top: 0.5cm;
+}
+
+footer{
+    position: absolute;
+    margin-top:50px;
+    width:100%;
+    left: 0px;
+    margin-right: 100px;
+    background-color: #005399;
+}
+
+

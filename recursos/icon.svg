@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16"
+   height="16"
+   viewBox="0 0 4.2333333 4.2333333"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="icon.svg"
+   inkscape:export-filename="C:\Users\Pablo Rodriguez\Desktop\icon.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="24.130019"
+     inkscape:cx="11.14794"
+     inkscape:cy="9.593859"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2" />
+  <defs
+     id="defs2">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter948"
+       x="-0.19251344"
+       y="-0.2061255"
+       width="1.3850269"
+       height="1.412251">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.13184859"
+         id="feGaussianBlur950" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter1027"
+       x="-0.19331753"
+       y="-0.21122504"
+       width="1.3866351"
+       height="1.4224501">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.1473933"
+         id="feGaussianBlur1029" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#005399;fill-opacity:1;paint-order:stroke markers fill;filter:url(#filter948)"
+       id="path31"
+       sodipodi:type="arc"
+       sodipodi:cx="2.2252138"
+       sodipodi:cy="1.6902319"
+       sodipodi:rx="0.8218559"
+       sodipodi:ry="0.76758242"
+       sodipodi:start="0"
+       sodipodi:end="6.2830806"
+       sodipodi:arc-type="slice"
+       d="M 3.0470697,1.6902319 A 0.8218559,0.76758242 0 0 1 2.2252353,2.4578143 0.8218559,0.76758242 0 0 1 1.4033579,1.6902721 0.8218559,0.76758242 0 0 1 2.2251492,0.92264951 0.8218559,0.76758242 0 0 1 3.0470697,1.6901515 l -0.8218559,8.04e-5 z"
+       transform="matrix(1.936805,0,0,1.8119313,-1.7620479,-1.4915412)" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Capa 2">
+    <path
+       style="mix-blend-mode:normal;fill:#feda2e;fill-opacity:1;paint-order:stroke markers fill;filter:url(#filter1027)"
+       id="path33"
+       sodipodi:type="arc"
+       sodipodi:cx="1.3258241"
+       sodipodi:cy="2.302747"
+       sodipodi:rx="0.91492975"
+       sodipodi:ry="0.83736265"
+       sodipodi:start="0"
+       sodipodi:end="6.2830806"
+       sodipodi:arc-type="slice"
+       d="M 2.2407539,2.302747 A 0.91492975,0.83736265 0 0 1 1.3258481,3.1401097 0.91492975,0.83736265 0 0 1 0.4108944,2.3027909 0.91492975,0.83736265 0 0 1 1.3257523,1.4653844 0.91492975,0.83736265 0 0 1 2.2407539,2.3026593 l -0.9149298,8.77e-5 z"
+       transform="matrix(1.7962142,0,0,1.7871528,-0.55931617,-1.35737)" />
+  </g>
+</svg>
