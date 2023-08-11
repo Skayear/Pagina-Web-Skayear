@@ -29,30 +29,30 @@ jobs:
         with:
           versionSpec: '5.x'
 
-        targetPath:
-          description: Optionally supply the path to the working directory.
-          required: false
-          default: ''
+        # targetPath:
+        #   description: Optionally supply the path to the working directory.
+        #   required: false
+        #   default: ''
 
-        useConfigFile:
-          description: Whether to use a custom configuration file.
-          required: false
-          default: false
+        # useConfigFile:
+        #   description: Whether to use a custom configuration file.
+        #   required: false
+        #   default: false
 
-        configFilePath:
-          description: Optional path to config file (defaults to GitVersion.yml).
-          required: false
-          default: 'GitVersion.yml'
+        # configFilePath:
+        #   description: Optional path to config file (defaults to GitVersion.yml).
+        #   required: false
+        #   default: 'GitVersion.yml'
 
-        updateAssemblyInfo:
-          description: Whether to update versions in the AssemblyInfo files.
-          required: false
-          default: false
+        # updateAssemblyInfo:
+        #   description: Whether to update versions in the AssemblyInfo files.
+        #   required: false
+        #   default: false
 
-        updateAssemblyInfoFilename:
-          description: Update versions in specified file.
-          required: false
-          default: ''
+        # updateAssemblyInfoFilename:
+        #   description: Update versions in specified file.
+        #   required: false
+        #   default: ''
 
         additionalArguments:
           description: Additional arguments to send to GitVersion.
