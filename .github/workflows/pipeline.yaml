@@ -16,26 +16,62 @@ jobs:
 
     steps:
 
-      - 
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
+      - name: GitTools
+        uses: GitTools/actions@v0.10.2
+
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0
+        with:
+          versionSpec: '5.x'
+
+      targetPath:
+        description: Optionally supply the path to the working directory.
+        required: false
+        default: ''
+        
+      useConfigFile:
+        description: Whether to use a custom configuration file.
+        required: false
+        default: false
+
+      configFilePath:
+        description: Optional path to config file (defaults to GitVersion.yml).
+        required: false
+        default: 'GitVersion.yml'
+
+      updateAssemblyInfo:
+        description: Whether to update versions in the AssemblyInfo files.
+        required: false
+        default: false
+
+      updateAssemblyInfoFilename:
+        description: Update versions in specified file.
+        required: false
+        default: ''
+
+      additionalArguments:
+        description: Additional arguments to send to GitVersion.
+        required: false
+        default: ''
+
       - name: Lint Action
         uses: wearerequired/lint-action@v2.0.1
 
-      -
-        name: Set up Docker Buildx
+      - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
-      -
-        name: Login to DockerHub
+
+      - name: Login to DockerHub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
-        name: Push
+
+      - name: Push
         uses: docker/build-push-action@v3
         with:
           file: dockerfile
