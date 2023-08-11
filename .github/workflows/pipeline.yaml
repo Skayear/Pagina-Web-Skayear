@@ -5,6 +5,7 @@ on:
     branches:
       - "main"
       - "develop"
+      - "devops"
 
 env:
   ENVIRONMENT_NAME: ${{ fromJSON('{"develop":"dev", "qa":"qa", "main":"prod"}')[github.head_ref || github.ref_name ] }}
@@ -82,3 +83,8 @@ jobs:
             ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ steps.gitversion.outputs.semVer }}
           #${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ env.ENVIRONMENT_NAME }}_${{ github.run_number }}
           contex: .
+
+      - name: Create Release
+        uses: actions/create-release@v1
+        with:
+            tag_name: ${{ steps.gitversion.outputs.SemVer }}
