@@ -1,4 +1,5 @@
 name: Deployment Pipeline
+run-name: Version: ${{ steps.gitversion.outputs.semVer }} ${{ inputs.deploy_target }} by @${{ github.actor }}
 
 on:
   push:
