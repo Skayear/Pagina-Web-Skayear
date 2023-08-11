@@ -1,5 +1,4 @@
 name: Deployment Pipeline
-run-name: "Version:" ${{ steps.gitversion.outputs.semVer }} ${{ inputs.deploy_target }} by @${{ github.actor }}
 
 on:
   push:
@@ -63,6 +62,9 @@ jobs:
           echo "CommitsSinceVersionSourcePadded: ${{ steps.gitversion.outputs.commitsSinceVersionSourcePadded }}"
           echo "CommitDate: ${{ steps.gitversion.outputs.commitDate }}"
 
+      - name: Set Pipeline Title
+        run: echo "::set-env name=PIPELINE_TITLE::Pipeline for ${GITHUB_REF}::Version ${{ steps.gitversion.outputs.semVer }}"
+      
       - name: Lint Action
         uses: wearerequired/lint-action@v2.0.1
 
