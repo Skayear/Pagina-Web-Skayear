@@ -1,0 +1,11 @@
+mode: ContinuousDeployment
+branches:
+  main:
+      label: beta
+  develop:
+      label: beta   
+  devops:
+      label: beta
+ignore:
+  sha: []
+merge-message-formats: {}
