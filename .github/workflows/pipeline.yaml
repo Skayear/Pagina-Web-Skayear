@@ -79,5 +79,6 @@ jobs:
           file: dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest, 
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ env.ENVIRONMENT_NAME }}_${{ github.run_number }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ steps.gitversion.outputs.semVer }}
+          #${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ env.ENVIRONMENT_NAME }}_${{ github.run_number }}
           contex: .
