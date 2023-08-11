@@ -1,5 +1,4 @@
 name: Deployment Pipeline
-run-name: ${{ github.actor }} is learning GitHub Actions
 
 on:
   push:
@@ -11,7 +10,6 @@ on:
 env:
   ENVIRONMENT_NAME: ${{ fromJSON('{"develop":"dev", "qa":"qa", "main":"prod"}')[github.head_ref || github.ref_name ] }}
   IMAGE_NAME: pablo_page
-  
 
 jobs:
   build-and-push: 
@@ -63,9 +61,6 @@ jobs:
           echo "CommitsSinceVersionSource: ${{ steps.gitversion.outputs.commitsSinceVersionSource }}"
           echo "CommitsSinceVersionSourcePadded: ${{ steps.gitversion.outputs.commitsSinceVersionSourcePadded }}"
           echo "CommitDate: ${{ steps.gitversion.outputs.commitDate }}"
-
-      - name: Set Pipeline Title
-        run: echo "::set-env name=PIPELINE_TITLE::Pipeline for ${GITHUB_REF}::Version ${{ steps.gitversion.outputs.semVer }}"
       
       - name: Lint Action
         uses: wearerequired/lint-action@v2.0.1
@@ -86,7 +81,6 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest, 
             ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ steps.gitversion.outputs.semVer }}
-          #${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ env.ENVIRONMENT_NAME }}_${{ github.run_number }}
           contex: .
 
       - name: Create Release
