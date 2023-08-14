@@ -26,12 +26,16 @@ jobs:
         uses: gittools/actions/gitversion/setup@v0
         with:
           versionSpec: '5.x'
-          
+
+      # - task: gitversion/execute@0
+      #   displayName: Determine Version
+      #   inputs:
+      #     useConfigFile: true
+      #     configFilePath: '/.devops/GitVersion.yml' 
+
       - task: gitversion/execute@0
-        displayName: Determine Version
-        inputs:
-          useConfigFile: true
-          configFilePath: '/.devops/GitVersion.yml'
+        displayName: Use GitVersion
+        name: Version # the step MUST be named to access its output variables in another job.
 
       - name: Display GitVersion outputs (step output)
         run: |
