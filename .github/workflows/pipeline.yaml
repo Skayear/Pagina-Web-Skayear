@@ -27,11 +27,11 @@ jobs:
         with:
           versionSpec: '5.x'
 
-      - name: Determine Version
-        uses: gittools/actions/gitversion/execute@v0
-        with:
-          useConfigFile: true
-          configFilePath: GitVersion.yml
+      # - name: Determine Version
+      #   uses: gittools/actions/gitversion/execute@v0
+      #   with:
+      #     useConfigFile: true
+      #     configFilePath: GitVersion.yml
         
       - name: Display GitVersion outputs (step output)
         run: |
