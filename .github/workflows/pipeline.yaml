@@ -5,6 +5,7 @@ on:
     branches:
       - "main"
       - "develop"
+      - "devops"
 
 env:
   ENVIRONMENT_NAME: ${{ fromJSON('{"develop":"dev", "qa":"qa", "main":"prod"}')[github.head_ref || github.ref_name ] }}
@@ -26,10 +27,19 @@ jobs:
         with:
           versionSpec: '5.x'
 
-      - name: Use GitVersion
-        id: gitversion # step id used as reference for output values
-        uses: gittools/actions/gitversion/execute@v0.9
-      - run: |
+      # - name: Display GitVersion config
+      #   uses: gittools/actions/gitversion/execute@v0
+      #   with:
+      #     useConfigFile: true
+      #     additionalArguments: '/GitVersion.yml'
+
+      # - name: Determine Version
+      #   uses: gittools/actions/gitversion/execute@v0
+      #   with:
+      #     useConfigFile: true
+
+      - name: Display GitVersion outputs (step output)
+        run: |
           echo "Major: ${{ steps.gitversion.outputs.major }}"
           echo "Minor: ${{ steps.gitversion.outputs.minor }}"
           echo "Patch: ${{ steps.gitversion.outputs.patch }}"
@@ -50,6 +60,7 @@ jobs:
           echo "FullSemVer: ${{ steps.gitversion.outputs.fullSemVer }}"
           echo "InformationalVersion: ${{ steps.gitversion.outputs.informationalVersion }}"
           echo "BranchName: ${{ steps.gitversion.outputs.branchName }}"
+          echo "EscapedBranchName: ${{ steps.gitversion.outputs.escapedBranchName }}"
           echo "Sha: ${{ steps.gitversion.outputs.sha }}"
           echo "ShortSha: ${{ steps.gitversion.outputs.shortSha }}"
           echo "NuGetVersionV2: ${{ steps.gitversion.outputs.nuGetVersionV2 }}"
@@ -59,8 +70,44 @@ jobs:
           echo "VersionSourceSha: ${{ steps.gitversion.outputs.versionSourceSha }}"
           echo "CommitsSinceVersionSource: ${{ steps.gitversion.outputs.commitsSinceVersionSource }}"
           echo "CommitsSinceVersionSourcePadded: ${{ steps.gitversion.outputs.commitsSinceVersionSourcePadded }}"
+          echo "UncommittedChanges: ${{ steps.gitversion.outputs.uncommittedChanges }}"
           echo "CommitDate: ${{ steps.gitversion.outputs.commitDate }}"
 
+      - name: Display GitVersion outputs (step output with prefix)
+        run: |
+          echo "Major: ${{ steps.gitversion.outputs.GitVersion_Major }}"
+          echo "Minor: ${{ steps.gitversion.outputs.GitVersion_Minor }}"
+          echo "Patch: ${{ steps.gitversion.outputs.GitVersion_Patch }}"
+          echo "PreReleaseTag: ${{ steps.gitversion.outputs.GitVersion_PreReleaseTag }}"
+          echo "PreReleaseTagWithDash: ${{ steps.gitversion.outputs.GitVersion_PreReleaseTagWithDash }}"
+          echo "PreReleaseLabel: ${{ steps.gitversion.outputs.GitVersion_PreReleaseLabel }}"
+          echo "PreReleaseNumber: ${{ steps.gitversion.outputs.GitVersion_PreReleaseNumber }}"
+          echo "WeightedPreReleaseNumber: ${{ steps.gitversion.outputs.GitVersion_WeightedPreReleaseNumber }}"
+          echo "BuildMetaData: ${{ steps.gitversion.outputs.GitVersion_BuildMetaData }}"
+          echo "BuildMetaDataPadded: ${{ steps.gitversion.outputs.GitVersion_BuildMetaDataPadded }}"
+          echo "FullBuildMetaData: ${{ steps.gitversion.outputs.GitVersion_FullBuildMetaData }}"
+          echo "MajorMinorPatch: ${{ steps.gitversion.outputs.GitVersion_MajorMinorPatch }}"
+          echo "SemVer: ${{ steps.gitversion.outputs.GitVersion_SemVer }}"
+          echo "LegacySemVer: ${{ steps.gitversion.outputs.GitVersion_LegacySemVer }}"
+          echo "LegacySemVerPadded: ${{ steps.gitversion.outputs.GitVersion_LegacySemVerPadded }}"
+          echo "AssemblySemVer: ${{ steps.gitversion.outputs.GitVersion_AssemblySemVer }}"
+          echo "AssemblySemFileVer: ${{ steps.gitversion.outputs.GitVersion_AssemblySemFileVer }}"
+          echo "FullSemVer: ${{ steps.gitversion.outputs.GitVersion_FullSemVer }}"
+          echo "InformationalVersion: ${{ steps.gitversion.outputs.GitVersion_InformationalVersion }}"
+          echo "BranchName: ${{ steps.gitversion.outputs.GitVersion_BranchName }}"
+          echo "EscapedBranchName: ${{ steps.gitversion.outputs.GitVersion_EscapedBranchName }}"
+          echo "Sha: ${{ steps.gitversion.outputs.GitVersion_Sha }}"
+          echo "ShortSha: ${{ steps.gitversion.outputs.GitVersion_ShortSha }}"
+          echo "NuGetVersionV2: ${{ steps.gitversion.outputs.GitVersion_NuGetVersionV2 }}"
+          echo "NuGetVersion: ${{ steps.gitversion.outputs.GitVersion_NuGetVersion }}"
+          echo "NuGetPreReleaseTagV2: ${{ steps.gitversion.outputs.GitVersion_NuGetPreReleaseTagV2 }}"
+          echo "NuGetPreReleaseTag: ${{ steps.gitversion.outputs.GitVersion_NuGetPreReleaseTag }}"
+          echo "VersionSourceSha: ${{ steps.gitversion.outputs.GitVersion_VersionSourceSha }}"
+          echo "CommitsSinceVersionSource: ${{ steps.gitversion.outputs.GitVersion_CommitsSinceVersionSource }}"
+          echo "CommitsSinceVersionSourcePadded: ${{ steps.gitversion.outputs.GitVersion_CommitsSinceVersionSourcePadded }}"
+          echo "UncommittedChanges: ${{ steps.gitversion.outputs.GitVersion_UncommittedChanges }}"
+          echo "CommitDate: ${{ steps.gitversion.outputs.GitVersion_CommitDate }}"
+          
       - name: Lint Action
         uses: wearerequired/lint-action@v2.0.1
 
@@ -80,5 +127,4 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest, 
             ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ steps.gitversion.outputs.semVer }}
-          #${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:${{ env.ENVIRONMENT_NAME }}_${{ github.run_number }}
           contex: .
