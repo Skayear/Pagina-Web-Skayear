@@ -6,66 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="stile.css">
     <title>Bienvenido a mi página</title>
-	<link rel="icon" href="./images/icon.png">
+	<link rel="icon" href="./images/icon.ico">
     <link rel="stylesheet" type="text/css" href="style.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
 <body>
 
-	<!-- <div class="container">
-		<img src="images\pabloviolinbanana.png" class="img-fluid" align="right" alt="logo del sitio" width="25.40%">
-	</div> -->
-
-	<!-- <div class="container" id="top_basic">
-		<h1><strong>Yo soy</strong> Pablo Nicolás Rodriguez Sequeira</h1>
-		<h6>Bienvenidos a mi Porfóleo Estudiantil</h6>
-		<h6>Estudiante de informatica y música</h6>
-	</div> -->
-
 	<div class="container">
-		<p>pablo@pablo:~$ bash porfolio.sh</p>
+		<p class="terminal-prompt">pablo@pablo:~$ bash porfolio.sh<span class="cursor">_</span></p>
 	</div>
 
-	<div>
-		<nav>
-			<div class="container">
-				<div class="row">
-							<ul class="nav">
-						<li class="nav-item">	
-					    <a class="nav-link" href="index.html">
-							<p class="fw-bold">Home</p>
-						</a>
-					  </li>
-					  	<li class="nav-item">
-					    <a class="nav-link" href="#reference_cv">
-							<p class="fw-bold">Skills</p>
-						</a>
-					  </li>
-					 	<li class="nav-item">
-					    <a class="nav-link" href="#reference_proyect">
-							<p class="fw-bold">Documentation</p>
-						</a>
-					  </li>
-					  	<li class="nav-item">
-					    <a class="nav-link" href="#reference_pagina">
-							<p class="fw-bold">Proyects</p>
-						</a>
-					  </li>
-						<li class="nav-item">
-				  		<a class="nav-link" href="#reference_socialnet">
-							<p class="fw-bold">Hobbies</p>
-						</a>
-					  </li>
-						<li class="nav-item">
-							<a href="./images/CV_TEST.pdf">
-								<button type="button" class="btn btn-outline-primary">
-									Download CV
-								</button>
-							</a>
-					  </li>
-					</ul>
-				</div>
+	<div class="container">
+		<nav class="ascii-nav">
+			<pre class="nav-menu">
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│     Home       About       Skills      Docs       Projects    Hobbies     CV           │
+└────────────────────────────────────────────────────────────────────────────────────────┘</pre>
+			<div class="nav-links">
+				<a href="index.html" class="ascii-link">[1]</a>
+				<a href="#reference_about" class="ascii-link">[2]</a>
+				<a href="#reference_cv" class="ascii-link">[3]</a>
+				<a href="#reference_proyect" class="ascii-link">[4]</a>
+				<a href="#reference_pagina" class="ascii-link">[5]</a>
+				<a href="#reference_socialnet" class="ascii-link">[6]</a>
+				<a href="./images/CV_TEST.pdf" class="ascii-link">[7]</a>
 			</div>
 		</nav>
 	</div>
@@ -73,7 +38,7 @@
 	<!-- ---------------------------------------------------------------------------------------------------------------- -->
 
 <div class="container">
-	<pre>
+	<pre class="ascii-blue">
 		 __    __  ______  __ 
 		|  \  |  \|      \|  \
 		| $$  | $$ \$$$$$$| $$
@@ -84,7 +49,7 @@
 		| $$  | $$|   $$ \|  \
 		 \$$   \$$ \$$$$$$ \$$</pre>
 	
-	<pre>                  ______                        
+	<pre class="ascii-white">                  ______                        
 		 |      \                       
 		 \$$$$$$ ______   ______ ____  
 		   | $$  |      \ |      \    \ 
@@ -95,14 +60,14 @@
 		  \$$$$$$ \$$$$$$$ \$$  \$$  \$$</pre>
 
 	<div align="center">
-		<pre>
+		<pre class="ascii-white">
 			       ____        __    __         ____            __     _                                	
 		         / __ \____ _/ /_  / /___     / __ \____  ____/ /____(_)___ ___  _____  ____           
 		        / /_/ / __ `/ __ \/ / __ \   / /_/ / __ \/ __  / ___/ / __ `/ / / / _ \/_  /           
 		       / ____/ /_/ / /_/ / / /_/ /  / _, _/ /_/ / /_/ / /  / / /_/ / /_/ /  __/ / /_           
 		/_/    \__,_/_.___/_/\____/  /_/ |_|\____/\__,_/_/  /_/\__, /\__,_/\___/ /___/     
 					       /____/</pre>
-		 <pre>
+		 <pre class="ascii-pink">
 			   ___________ _____  ______           _____           
 			 /  ___| ___ \  ___| |  _  \         |  _  |          
 			 \ `--.| |_/ / |__   | | | |_____   _| | | |_ __  ___ 
@@ -116,43 +81,246 @@
 
 	<!-- ---------------------------------------------------------------------------------------------------------------- -->
 
-		<hr>
-		<div class="container" id="text_center">
-			<div id="character_three"> 
-				<strong id="reference_pagina">El propósito de esta página</strong> es demostrar los diferentes conocimientos en distintos áreas de la informatica y ademas tener un compilatorios de los proyectos realizados.
-				<p>Un de mis metas es poder trabajar en el rubro de la informatica y poder seguir con mis formaciones académicas en el rubro.</p>
-				<p>Tambien muestro como extra no relacionado, los conocimientos de musica que tengo como mera documentacion de mi trayectoria como estudiante de violín</p>
-				<p>A medida que vaya pasando el tiempo se actualizara el contenido de esta pagina, tanto su estilo como actualizacion de sus proyectos</p>
+		<div class="container my-5" id="text_center">
+			<div class="row align-items-center">
+				<div class="col-md-4 text-center mb-4 mb-md-0">
+					<img src="./images/pabloviolinbanana.png" class="img-fluid" alt="Pablo Rodriguez" style="max-width: 300px; opacity: 0.8; margin-right: 30px;">
+				</div>
+				<div class="col-md-8" id="character_three">
+					<h3 id="reference_about" class="mb-4">About me</h3>
+					<p class="mb-3">Hello! My name is Pablo Rodriguez. I'm from Uruguay, Montevideo and I'm SRE with DevOps philosophy. I have 2 years of experience in implementing CI/CD Pipelines, Infrastructure as code and making dockerfile images on different projects.</p>
+					<p class="mb-3">My objective in this portfolio is to stand out as a complete and versatile professional IT, exchaging my abilities in creation, management, and projects. Also I look for learning more and share this process with other developers and IT students, creating a space where they investigate different technologies and good practices.</p>
+					<p class="mb-0">(I will update the page and upgrade its design or style over the time)</p>
+				</div>
 			</div>
 		</div>
-		<hr>
+
+		<div class="container my-5" id="text_center">
+			<div id="character_three"> 
+				<h3 class="mb-4">Hobbies</h3>
+				<p class="mb-3">My hobbies are diverse and create a balance between my job and my free time, these hobbies include:</p>
+				<p class="mb-3">Different lectures like sci-fi books and various genres of manga comics.</p>
+				<p class="mb-3">Board games and roles, such as dungeons and dragons.</p>
+				<p class="mb-0">Violin, for example, I was part of the "Orquesta Juvenil del SODRE" until 2020.</p>
+			</div>
+		</div>
+
+		<div class="container my-5" id="text_center">
+			<div id="character_three"> 
+				<h3 class="mb-4">Projects</h3>
+				<section class="projects" id="projects">
+					<p>Cargando proyectos...</p>
+				</section>
+			</div>
+		</div>
+
+		<div class="container my-5" id="text_center">
+			<div id="character_three"> 
+				<h3 class="mb-4">Technologies</h3>
+				<p class="mb-4">In my portfolio, I will cover various technologies that I am proficient in and have experience with:</p>
+				<div class="row">
+					<div class="col-md-4 mb-4">
+						<div class="card h-100">
+							<div class="card-body text-center">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="48" height="48" class="mb-3">
+								<h5 class="card-title">Python</h5>
+								<p class="card-text">Scripting, automation, and building web applications with Django and Flask.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 mb-4">
+						<div class="card h-100">
+							<div class="card-body text-center">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" width="48" height="48" class="mb-3">
+								<h5 class="card-title">Docker & Kubernetes</h5>
+								<p class="card-text">Containerization and orchestration of applications.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 mb-4">
+						<div class="card h-100">
+							<div class="card-body text-center">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="Database" width="48" height="48" class="mb-3">
+								<h5 class="card-title">Databases</h5>
+								<p class="card-text">Data management with MySQL, PostgreSQL, and MongoDB.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 mb-4">
+						<div class="card h-100">
+							<div class="card-body text-center">
+								<img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" width="48" height="48" class="mb-3">
+								<h5 class="card-title">AWS</h5>
+								<p class="card-text">EC2, S3, Lambda, RDS, CloudFormation</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 mb-4">
+						<div class="card h-100">
+							<div class="card-body text-center">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" width="48" height="48" class="mb-3">
+								<h5 class="card-title">Azure</h5>
+								<p class="card-text">Virtual Machines, App Service, DevOps</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 mb-4">
+						<div class="card h-100">
+							<div class="card-body text-center">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP" width="48" height="48" class="mb-3">
+								<h5 class="card-title">Google Cloud</h5>
+								<p class="card-text">Compute Engine, Cloud Storage, Kubernetes Engine</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 mb-4">
+						<div class="card h-100">
+							<div class="card-body text-center">
+								<img src="https://avatars.githubusercontent.com/u/44036562?s=200&v=4" alt="GitHub Actions" width="48" height="48" class="mb-3">
+								<h5 class="card-title">GitHub Actions</h5>
+								<p class="card-text">Automated workflows for CI/CD, testing, and deployment.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 mb-4">
+						<div class="card h-100">
+							<div class="card-body text-center">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" alt="GitLab CI/CD" width="48" height="48" class="mb-3">
+								<h5 class="card-title">GitLab CI/CD</h5>
+								<p class="card-text">Integrated pipelines for continuous integration and deployment.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 mb-4">
+						<div class="card h-100">
+							<div class="card-body text-center">
+								<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure DevOps" width="48" height="48" class="mb-3">
+								<h5 class="card-title">Azure DevOps</h5>
+								<p class="card-text">End-to-end DevOps toolchain for planning, development, and delivery.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container my-5" id="text_center">
+			<div id="character_three"> 
+				<h3 id="reference_proyect" class="mb-4">Documentation</h3>
+				<div class="row">
+					<div class="col-md-4 mb-4">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title mb-3">¿Qué es GitOps?</h5>
+								<p class="card-text mb-3">Comprehensive guide about GitOps methodology and best practices.</p>
+								<a href="#" class="btn btn-outline-primary">Read More</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 mb-4">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title mb-3">What is nginx and how does it work?</h5>
+								<p class="card-text mb-3">Complete overview of NGINX web server and reverse proxy configuration.</p>
+								<a href="#" class="btn btn-outline-primary">Read More</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 mb-4">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title mb-3">Analysis of logs and troubleshooting</h5>
+								<p class="card-text mb-3">Guide for effective log analysis and system troubleshooting techniques.</p>
+								<a href="#" class="btn btn-outline-primary">Read More</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 mb-4">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title mb-3">What is CI/CD</h5>
+								<p class="card-text mb-3">What 's CI/CD? (Continuous Integration/Continuous Delivery) The meaning of CI/CD initials are “CI Continuous Integration” and “CD Continuous Delivery or Deployment”.</p>
+								<a href="#" class="btn btn-outline-primary">Read More</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 mb-4">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title mb-3">What does upstring on nginx mean?</h5>
+								<p class="card-text mb-3">An NGINX "upstream" configuration defines a group of backend servers to which NGINX, as a reverse proxy, distributes client requests for load balancing, improving performance and reliability.</p>
+								<a href="#" class="btn btn-outline-primary">Read More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 </body>
 
 	<footer>
-			 
-		<div id="text_center">
-			<h5 id="reference_socialnet">Redes Sociales</h5>
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-6 text-start">
+					<small id="reference_pagina" style="color: #b9b7b7; font-size: 0.7em;text-shadow:
+						0 0 5px #b9b7b7,
+						0 0 10px #b9b7b7,
+						0 0 20px #b9b7b7,
+						0 0 40px #b9b7b7,
+						0 0 80px #b9b7b7;
+					animation: flicker 1s infinite;">
+						<strong>Purpose:</strong> IT portfolio showcasing DevOps/SRE skills and projects for professional growth.
+					</small>
+				</div>
+				<div class="col-md-6 text-end">
+					<div class="mb-1">
+						<a href="https://www.linkedin.com/in/pablo-nicolas-rodriguez-sequeira-97ab291b2/">
+							<img src="./images/Linkedin-logo.png" alt="LinkedIn">
+						</a>
+						<a href="https://github.com/Skayear">
+							<img src="./images/logotipo-de-github.png" alt="GitHub">
+						</a>
+					</div>
+					<small class="text-muted">v1.0 (2025)</small>
+				</div>
+			</div>
 		</div>
-			
-		<div id="text_center">
-				<a href="https://www.instagram.com/pablonicolasrodrig/?hl=es-la">
-				<img src="./images/instagram_logo.png" width="3.4%" ></a>
-	
-				<a href="https://www.linkedin.com/in/pablo-nicolas-rodriguez-sequeira-97ab291b2/">
-				<img src="./images/Linkedin-logo.png" width="5%"></a>
-	
-				<a href="https://github.com/Skayear">
-				<img src="./images/logotipo-de-github.png" width="3%"></a>
-		</div>
-
-		<div>
-			<p id="text_center">Version Alpha 1 (2022)</p>
-		</div>
-
 	</footer>
 
+	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Cambiá este nombre por tu usuario de GitHub 👇
+  const GITHUB_USER = "Skayear";
 
+  // Contenedor donde pondremos las cards
+  const container = document.getElementById("projects");
+
+  // Llamamos a la API pública de GitHub
+  fetch(`https://api.github.com/users/${GITHUB_USER}/repos`)
+    .then(response => response.json())
+    .then(repos => {
+      container.innerHTML = ""; // Limpiar el "Cargando..."
+      repos.forEach(repo => {
+        // Filtramos los repos que no son importantes (opcional)
+        if (repo.fork) return; // no mostrar forks
+
+        // Creamos una card
+        const card = document.createElement("div");
+        card.classList.add("project");
+        card.innerHTML = `
+          <h2>${repo.name}</h2>
+          <p>${repo.description || "Sin descripción"}</p>
+          <a href="${repo.html_url}" target="_blank">Ver en GitHub</a>
+        `;
+        container.appendChild(card);
+      });
+    })
+    .catch(err => {
+      container.innerHTML = "<p>Error al cargar proyectos 😢</p>";
+      console.error(err);
+    });
+</script>
 </html>
