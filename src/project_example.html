@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mis Proyectos (Automático)</title>
+<style>
+body {
+  background: #000;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  padding: 50px;
+  text-align: center;
+}
+
+h1 {
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff, 0 0 30px #0ff;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.project {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #0ff5;
+  border-radius: 15px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 15px #0ff2;
+}
+
+.project:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #0ff;
+}
+
+.project h2 {
+  color: #0ff;
+  margin-bottom: 10px;
+}
+
+.project p {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.project a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #0ff;
+  color: #000;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.project a:hover {
+  background: #fff;
+}
+</style>
+</head>
+
+<body>
+  <h1>💾 Mis Proyectos (automático desde GitHub)</h1>
+  <section class="projects" id="projects">
+    <p>Cargando proyectos...</p>
+  </section>
+
+  <script>
+  // Cambiá este nombre por tu usuario de GitHub 👇
+  const GITHUB_USER = "Skayear";
+
+  // Contenedor donde pondremos las cards
+  const container = document.getElementById("projects");
+
+  // Llamamos a la API pública de GitHub
+  fetch(`https://api.github.com/users/${GITHUB_USER}/repos`)
+    .then(response => response.json())
+    .then(repos => {
+      container.innerHTML = ""; // Limpiar el "Cargando..."
+      repos.forEach(repo => {
+        // Filtramos los repos que no son importantes (opcional)
+        if (repo.fork) return; // no mostrar forks
+
+        // Creamos una card
+        const card = document.createElement("div");
+        card.classList.add("project");
+        card.innerHTML = `
+          <h2>${repo.name}</h2>
+          <p>${repo.description || "Sin descripción"}</p>
+          <a href="${repo.html_url}" target="_blank">Ver en GitHub</a>
+        `;
+        container.appendChild(card);
+      });
+    })
+    .catch(err => {
+      container.innerHTML = "<p>Error al cargar proyectos 😢</p>";
+      console.error(err);
+    });
+  </script>
+</body>
+</html>

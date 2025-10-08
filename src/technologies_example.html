@@ -1,0 +1,158 @@
+<div class="tech-section">
+  <h3>🧠 Technologies</h3>
+  <p>Here are some of the technologies I use and have experience with:</p>
+
+  <div class="tech-grid">
+    <div class="tech-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+      <h4>Python</h4>
+      <p>Scripting, automation, and web apps with Django and Flask.</p>
+    </div>
+
+    <div class="tech-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
+      <h4>Docker & Kubernetes</h4>
+      <p>Containerization and orchestration of applications.</p>
+    </div>
+
+    <div class="tech-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="Database">
+      <h4>Databases</h4>
+      <p>MySQL, PostgreSQL, MongoDB for data management.</p>
+    </div>
+
+    <!-- 🧩 Cloud Platforms con desglose -->
+    <div class="tech-card cloud-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="Cloud">
+      <h4>Cloud Platforms</h4>
+      <p>Experience with major cloud providers for deployment and scalability:</p>
+
+      <div class="cloud-grid">
+        <div class="cloud-item aws">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS">
+          <span>AWS</span>
+        </div>
+        <div class="cloud-item azure">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+          <span>Azure</span>
+        </div>
+        <div class="cloud-item gcp">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP">
+          <span>GCP</span>
+        </div>
+      </div>
+
+      <ul class="cloud-details">
+        <li><strong>AWS:</strong> EC2, S3, IAM, Lambda</li>
+        <li><strong>Azure:</strong> DevOps pipelines, App Services, Monitoring</li>
+        <li><strong>GCP:</strong> Compute Engine, Cloud Run, Monitoring</li>
+      </ul>
+    </div>
+
+    <div class="tech-card">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="CI/CD">
+      <h4>CI/CD Tools</h4>
+      <p>GitHub Actions, GitLab Pipelines, Azure DevOps.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.tech-section {
+  text-align: center;
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff;
+  font-family: 'Poppins', sans-serif;
+  padding: 50px;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.tech-card {
+  background: rgba(10, 10, 10, 0.9);
+  border: 1px solid #0ff4;
+  border-radius: 15px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 15px #0ff3;
+}
+
+.tech-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #0ff;
+}
+
+.tech-card img {
+  width: 60px;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 8px #0ff);
+}
+
+.tech-card h4 {
+  color: #0ff;
+  margin-bottom: 10px;
+}
+
+.tech-card p {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+/* 🧩 Cloud section styling */
+.cloud-card {
+  position: relative;
+}
+
+.cloud-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 15px 0;
+}
+
+.cloud-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.cloud-item img {
+  width: 40px;
+  filter: drop-shadow(0 0 6px #0ff);
+}
+
+.cloud-item span {
+  margin-top: 5px;
+  font-size: 0.85em;
+  opacity: 0.8;
+}
+
+.cloud-item:hover {
+  transform: scale(1.15);
+}
+
+/* Colores por proveedor */
+.aws img { filter: drop-shadow(0 0 6px #ff9900); }
+.azure img { filter: drop-shadow(0 0 6px #00aaff); }
+.gcp img { filter: drop-shadow(0 0 6px #4285f4); }
+
+.cloud-details {
+  text-align: left;
+  margin-top: 10px;
+  font-size: 0.85em;
+  color: #aaf;
+  list-style: none;
+  padding-left: 0;
+}
+
+.cloud-details li {
+  margin: 4px 0;
+  text-shadow: 0 0 4px #0ff3;
+}
+</style>
