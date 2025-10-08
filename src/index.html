@@ -13,62 +13,24 @@
 
 <body>
 
-	<!-- <div class="container">
-		<img src="images\pabloviolinbanana.png" class="img-fluid" align="right" alt="logo del sitio" width="25.40%">
-	</div> -->
-
-	<!-- <div class="container" id="top_basic">
-		<h1><strong>Yo soy</strong> Pablo Nicolás Rodriguez Sequeira</h1>
-		<h6>Bienvenidos a mi Porfóleo Estudiantil</h6>
-		<h6>Estudiante de informatica y música</h6>
-	</div> -->
-
 	<div class="container">
-		<p>pablo@pablo:~$ bash porfolio.sh</p>
+		<p class="terminal-prompt">pablo@pablo:~$ bash porfolio.sh<span class="cursor">_</span></p>
 	</div>
 
-	<div>
-		<nav>
-			<div class="container">
-				<div class="row">
-							<ul class="nav">
-						<li class="nav-item">	
-					    <a class="nav-link" href="index.html">
-							<p class="fw-bold">Home</p>
-						</a>
-					  </li>
-					  	<li class="nav-item">
-					    <a class="nav-link" href="#reference_about">
-							<p class="fw-bold">About me</p>
-						</a>
-					  </li>
-					  	<li class="nav-item">
-					    <a class="nav-link" href="#reference_cv">
-							<p class="fw-bold">Skills</p>
-						</a>
-					  </li>
-					 	<li class="nav-item">
-					    <a class="nav-link" href="#reference_proyect">
-							<p class="fw-bold">Documentation</p>
-						</a>
-					  </li>
-					  	<li class="nav-item">
-					    <a class="nav-link" href="#reference_pagina">
-							<p class="fw-bold">Proyects</p>
-						</a>
-					  </li>
-						<li class="nav-item">
-				  		<a class="nav-link" href="#reference_socialnet">
-							<p class="fw-bold">Hobbies</p>
-						</a>
-					  </li>
-						<li class="nav-item">
-							<a class="nav-link" href="./images/CV_TEST.pdf">
-								<p class="fw-bold">Download CV</p>
-							</a>
-					  </li>
-					</ul>
-				</div>
+	<div class="container">
+		<nav class="ascii-nav">
+			<pre class="nav-menu">
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│     Home       About       Skills      Docs       Projects    Hobbies     CV           │
+└────────────────────────────────────────────────────────────────────────────────────────┘</pre>
+			<div class="nav-links">
+				<a href="index.html" class="ascii-link">[1]</a>
+				<a href="#reference_about" class="ascii-link">[2]</a>
+				<a href="#reference_cv" class="ascii-link">[3]</a>
+				<a href="#reference_proyect" class="ascii-link">[4]</a>
+				<a href="#reference_pagina" class="ascii-link">[5]</a>
+				<a href="#reference_socialnet" class="ascii-link">[6]</a>
+				<a href="./images/CV_TEST.pdf" class="ascii-link">[7]</a>
 			</div>
 		</nav>
 	</div>
@@ -76,7 +38,7 @@
 	<!-- ---------------------------------------------------------------------------------------------------------------- -->
 
 <div class="container">
-	<pre>
+	<pre class="ascii-blue">
 		 __    __  ______  __ 
 		|  \  |  \|      \|  \
 		| $$  | $$ \$$$$$$| $$
@@ -87,7 +49,7 @@
 		| $$  | $$|   $$ \|  \
 		 \$$   \$$ \$$$$$$ \$$</pre>
 	
-	<pre>                  ______                        
+	<pre class="ascii-white">                  ______                        
 		 |      \                       
 		 \$$$$$$ ______   ______ ____  
 		   | $$  |      \ |      \    \ 
@@ -98,14 +60,14 @@
 		  \$$$$$$ \$$$$$$$ \$$  \$$  \$$</pre>
 
 	<div align="center">
-		<pre>
+		<pre class="ascii-white">
 			       ____        __    __         ____            __     _                                	
 		         / __ \____ _/ /_  / /___     / __ \____  ____/ /____(_)___ ___  _____  ____           
 		        / /_/ / __ `/ __ \/ / __ \   / /_/ / __ \/ __  / ___/ / __ `/ / / / _ \/_  /           
 		       / ____/ /_/ / /_/ / / /_/ /  / _, _/ /_/ / /_/ / /  / / /_/ / /_/ /  __/ / /_           
 		/_/    \__,_/_.___/_/\____/  /_/ |_|\____/\__,_/_/  /_/\__, /\__,_/\___/ /___/     
 					       /____/</pre>
-		 <pre>
+		 <pre class="ascii-pink">
 			   ___________ _____  ______           _____           
 			 /  ___| ___ \  ___| |  _  \         |  _  |          
 			 \ `--.| |_/ / |__   | | | |_____   _| | | |_ __  ___ 
@@ -146,12 +108,9 @@
 		<div class="container my-5" id="text_center">
 			<div id="character_three"> 
 				<h3 class="mb-4">Projects</h3>
-				<p class="mb-3">This Portfolio, here you can check its web: <a href="https://github.com/Skayear/Pagina_Web_Personal">Skayear/Pagina_Web_Personal (github.com)</a></p>
-				<p class="mb-3">Terraform templates: Here my goal is to create several terraform templates for various providers and make different cases of use of infrastructure and more</p>
-				<p class="mb-3"><a href="https://github.com/Skayear/Basic-AWS-Template">Skayear/Basic-AWS-Template (github.com)</a></p>
-				<p class="mb-3"><a href="https://github.com/Skayear/template-compilation">Skayear/template-compilation (github.com)</a></p>
-				<p class="mb-3">Dockerfile templates: In this project I am making dockerfile templates with different technologies and tools</p>
-				<p class="mb-0">My Github profile: <a href="https://github.com/Skayear">Skayear (Pablo Nicolás Rodriguez Sequeira) (github.com)</a></p>
+				<section class="projects" id="projects">
+					<p>Cargando proyectos...</p>
+				</section>
 			</div>
 		</div>
 
@@ -183,7 +142,7 @@
 					<div class="col-md-4 mb-4">
 						<div class="card">
 							<div class="card-body">
-								<h5 class="card-title mb-3">¿Qué es NGINX?</h5>
+								<h5 class="card-title mb-3">What is nginx and how does it work?</h5>
 								<p class="card-text mb-3">Complete overview of NGINX web server and reverse proxy configuration.</p>
 								<a href="#" class="btn btn-outline-primary">Read More</a>
 							</div>
@@ -198,6 +157,24 @@
 							</div>
 						</div>
 					</div>
+					<div class="col-md-4 mb-4">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title mb-3">What is CI/CD</h5>
+								<p class="card-text mb-3">What 's CI/CD? (Continuous Integration/Continuous Delivery) The meaning of CI/CD initials are “CI Continuous Integration” and “CD Continuous Delivery or Deployment”.</p>
+								<a href="#" class="btn btn-outline-primary">Read More</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 mb-4">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title mb-3">What does upstring on nginx mean?</h5>
+								<p class="card-text mb-3">An NGINX "upstream" configuration defines a group of backend servers to which NGINX, as a reverse proxy, distributes client requests for load balancing, improving performance and reliability.</p>
+								<a href="#" class="btn btn-outline-primary">Read More</a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -208,7 +185,13 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-md-6 text-start">
-					<small id="reference_pagina" style="color: #555555; font-size: 0.7em;">
+					<small id="reference_pagina" style="color: #b9b7b7; font-size: 0.7em;text-shadow:
+						0 0 5px #b9b7b7,
+						0 0 10px #b9b7b7,
+						0 0 20px #b9b7b7,
+						0 0 40px #b9b7b7,
+						0 0 80px #b9b7b7;
+					animation: flicker 1s infinite;">
 						<strong>Purpose:</strong> IT portfolio showcasing DevOps/SRE skills and projects for professional growth.
 					</small>
 				</div>
@@ -224,13 +207,45 @@
 							<img src="./images/logotipo-de-github.png" alt="GitHub">
 						</a>
 					</div>
-					<small class="text-muted">v2.0 (2025)</small>
+					<small class="text-muted">v1.0 (2025)</small>
 				</div>
 			</div>
 		</div>
 	</footer>
 
+	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Cambiá este nombre por tu usuario de GitHub 👇
+  const GITHUB_USER = "Skayear";
 
+  // Contenedor donde pondremos las cards
+  const container = document.getElementById("projects");
+
+  // Llamamos a la API pública de GitHub
+  fetch(`https://api.github.com/users/${GITHUB_USER}/repos`)
+    .then(response => response.json())
+    .then(repos => {
+      container.innerHTML = ""; // Limpiar el "Cargando..."
+      repos.forEach(repo => {
+        // Filtramos los repos que no son importantes (opcional)
+        if (repo.fork) return; // no mostrar forks
+
+        // Creamos una card
+        const card = document.createElement("div");
+        card.classList.add("project");
+        card.innerHTML = `
+          <h2>${repo.name}</h2>
+          <p>${repo.description || "Sin descripción"}</p>
+          <a href="${repo.html_url}" target="_blank">Ver en GitHub</a>
+        `;
+        container.appendChild(card);
+      });
+    })
+    .catch(err => {
+      container.innerHTML = "<p>Error al cargar proyectos 😢</p>";
+      console.error(err);
+    });
+</script>
 </html>
