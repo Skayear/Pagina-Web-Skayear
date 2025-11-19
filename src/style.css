@@ -14,16 +14,89 @@ html {
 }
 
 body{
-    background-color: #000000 !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
     color: #00ff00 !important;
     font-family: 'Courier New', monospace !important;
     font-size: 1.1em !important;
     min-height: 100vh;
     overflow-x: hidden;
-    filter: contrast(120%) brightness(110%) saturate(120%);
-    transform: perspective(1000px) rotateX(2deg);
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    backdrop-filter: blur(1px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Ventana de terminal */
+.terminal-window {
+    background-color: #1a1a1a;
+    border: 2px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+    width: 95%;
+    max-width: 1200px;
+    flex: 1;
+    margin-bottom: 20px;
+    position: relative;
+    filter: contrast(120%) brightness(110%) saturate(120%);
+}
+
+/* Barra de título de la terminal */
+.terminal-header {
+    background: linear-gradient(to bottom, #4a4a4a, #2a2a2a);
+    border-bottom: 1px solid #333;
+    border-radius: 6px 6px 0 0;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+}
+
+.terminal-button.close { background-color: #ff5f56; }
+.terminal-button.minimize { background-color: #ffbd2e; }
+.terminal-button.maximize { background-color: #27ca3f; }
+
+.terminal-title {
+    color: #ccc;
+    font-size: 0.9em;
+    font-family: 'Courier New', monospace;
+}
+
+/* Contenido de la terminal */
+.terminal-content {
+    padding: 20px;
+    background-color: #000000;
+    border-radius: 0 0 6px 6px;
     text-align: center;
+    position: relative;
 }
 
 /* Líneas de escaneo CRT */
@@ -65,21 +138,18 @@ body::before {
     20%, 24%, 55% { opacity: 0.3; }
 }
 
-/* Curvatura HTML */
-html {
-    transform: perspective(800px) rotateX(1.5deg);
-    transform-origin: center;
-}
-
 .container {
     background-color: transparent !important;
     padding: 15px !important;
     margin-bottom: 20px;
+    width: 100%;
+    max-width: none;
 }
 
 .container:first-of-type {
     padding: 10px 15px !important;
     margin-bottom: 10px;
+    text-align: left !important;
 }
 
 .container hr {
@@ -104,6 +174,105 @@ p {
 pre {
     color: #00ff41;
     font-family: 'Courier New', monospace;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+/* Contenedor ASCII responsive */
+.ascii-container {
+    position: relative;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ascii-center {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .ascii-container pre {
+        font-size: 0.75em;
+        line-height: 1.2;
+        margin: 15px 0;
+    }
+    
+    .ascii-name {
+        font-size: 0.5em !important;
+        line-height: 1.1 !important;
+    }
+    
+    .ascii-container {
+        padding: 10px;
+        margin: 15px 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ascii-container pre {
+        font-size: 0.5em;
+        line-height: 1.1;
+        margin: 10px 0;
+        padding: 5px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        transform: translateX(-20px);
+        text-align: center;
+    }
+    
+    .ascii-name {
+        font-size: 0.35em !important;
+        line-height: 1 !important;
+        padding: 8px 3px;
+    }
+    
+    .ascii-container {
+        padding: 15px;
+        margin: 20px 0;
+        background-color: transparent;
+        border: none;
+        border-radius: 8px;
+    }
+    
+    .ascii-blue {
+        margin-left: 0 !important;
+        font-size: 0.9em;
+        padding: 10px;
+        background-color: rgba(87, 103, 243, 0.1);
+        border-radius: 5px;
+    }
+    
+    .ascii-white {
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 5px;
+    }
+    
+    .ascii-pink {
+        padding: 10px;
+        background-color: rgba(255, 0, 184, 0.1);
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 375px) {
+    .ascii-container pre {
+        font-size: 0.45em;
+        padding: 5px;
+    }
+    
+    .ascii-name {
+        font-size: 0.3em !important;
+        padding: 5px 2px;
+    }
+    
+    .ascii-container {
+        padding: 12px;
+        margin: 15px 0;
+    }
 }
 
 .ascii-blue {
@@ -115,6 +284,42 @@ pre {
         0 0 40px #5767F3,
         0 0 80px #5767F3;
     animation: flicker 1s infinite;
+    position: relative;
+    margin-left: -150px;
+}
+
+@media (max-width: 480px) {
+    .ascii-blue {
+        color: #00BFFF !important;
+        text-shadow:
+            0 0 10px #00BFFF,
+            0 0 20px #00BFFF,
+            0 0 30px #00BFFF;
+        filter: brightness(1.5) contrast(1.3);
+        margin-left: 0 !important;
+        text-align: center;
+    }
+    
+    .ascii-white {
+        color: #FFFFFF !important;
+        text-shadow:
+            0 0 10px #FFFFFF,
+            0 0 20px #FFFFFF,
+            0 0 30px #FFFFFF;
+        filter: brightness(1.3) contrast(1.2);
+        text-align: center;
+    }
+    
+    .ascii-pink {
+        color: #FF1493 !important;
+        text-shadow:
+            0 0 10px #FF1493,
+            0 0 20px #FF1493,
+            0 0 30px #FF1493;
+        filter: brightness(1.4) contrast(1.3);
+        margin-left: 0 !important;
+        text-align: center;
+    }
 }
 
 .ascii-white{
@@ -137,6 +342,7 @@ pre {
         0 0 40px #FF00B8,
         0 0 80px #FF00B8;
     animation: flicker 0s infinite;
+    margin-left: -50px !important;
 }
 
 p {
@@ -178,54 +384,125 @@ a:hover {
         0 0 3px yellow;
 }
 
-/* Estilos de navegación ASCII terminal */
-.ascii-nav {
+/* Navegación terminal sólida */
+.terminal-nav {
+    background-color: #111;
+    border: 1px solid #00ff00;
+    border-radius: 5px;
+    padding: 15px;
     margin: 20px 0;
-    position: relative;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
 }
 
-.nav-menu {
-    color: #00ff00;
+.nav-header {
+    color: #00ffff;
     font-family: 'Courier New', monospace;
-    font-size: 0.9em;
-    margin: 0;
-    line-height: 1.2;
-}
-
-.nav-links {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: auto;
+    font-size: 1em;
+    margin-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 8px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    transform: translateY(-50%);
-    padding: 0;
-    margin-left: 20px;
 }
 
-.ascii-link:nth-child(1) { margin-left: 0px; }
-.ascii-link:nth-child(2) { margin-left: 65px; }
-.ascii-link:nth-child(3) { margin-left: 70px; }
-.ascii-link:nth-child(4) { margin-left: 75px; }
-.ascii-link:nth-child(5) { margin-left: 65px; }
-.ascii-link:nth-child(6) { margin-left: 80px; }
-.ascii-link:nth-child(7) { margin-left: 70px; }
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
 
-.ascii-link {
+.burger-menu span {
+    width: 20px;
+    height: 2px;
+    background-color: #00ff00;
+    margin: 2px 0;
+    transition: 0.3s;
+    display: block;
+}
+
+.burger-menu.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.nav-item {
     color: #00ff00 !important;
     text-decoration: none;
     font-family: 'Courier New', monospace;
-    font-weight: bold;
-    padding: 2px 4px;
+    font-size: 0.9em;
+    padding: 8px 12px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    text-align: center;
     transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
-.ascii-link:hover {
+.nav-item:hover {
     color: #ffff00 !important;
-    background-color: rgba(255, 255, 0, 0.1);
+    border-color: #00ff00;
+    background-color: rgba(0, 255, 0, 0.1);
     text-shadow: 0 0 5px #ffff00;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .nav-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    
+    .nav-item {
+        font-size: 0.8em;
+        padding: 6px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .burger-menu {
+        display: flex;
+    }
+    
+    .nav-grid {
+        display: none;
+        grid-template-columns: 1fr;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #111;
+        border: 1px solid #00ff00;
+        border-top: none;
+        border-radius: 0 0 5px 5px;
+        z-index: 1000;
+    }
+    
+    .nav-grid.show {
+        display: grid;
+    }
+    
+    .terminal-nav {
+        position: relative;
+    }
 }
 
 /* Estilo terminal para el header */
@@ -237,6 +514,7 @@ a:hover {
     font-family: 'Courier New', monospace !important;
     color: #00ff00 !important;
     font-size: 1.1em !important;
+    text-align: left !important;
 }
 
 .cursor {
@@ -293,11 +571,16 @@ a:hover {
 }
 
 footer{
-    background-color: #3d3b3b !important;
-    color: #00ff00 !important;
-    border-top: 1px solid #333333;
-    margin-top: 30px;
-    padding: 20px 0 !important;
+    background-color: #1a1a1a !important;
+    color: #00ffff !important;
+    border: 2px solid #00ff00;
+    border-radius: 8px;
+    margin-top: 20px;
+    padding: 25px !important;
+    width: 95%;
+    max-width: 1200px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+    text-shadow: 0 0 5px #00ffff;
 }
 
 footer h5 {
@@ -322,15 +605,9 @@ footer a {
 }
 
 footer .text-muted {
-    color: #666666 !important;
-    font-size: 0.75em !important;
-}
-
-
-body {
-  background: #000;
-  text-align: center;
-  font-family: monospace;
+    color: #00ff00 !important;
+    font-size: 0.9em !important;
+    text-shadow: 0 0 3px #00ff00;
 }
 
 .neon-flicker {

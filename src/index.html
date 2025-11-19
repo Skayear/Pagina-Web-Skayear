@@ -13,30 +13,45 @@
 
 <body>
 
+<div class="terminal-window">
+	<div class="terminal-header">
+		<div class="terminal-buttons">
+			<div class="terminal-button close"></div>
+			<div class="terminal-button minimize"></div>
+			<div class="terminal-button maximize"></div>
+		</div>
+		<div class="terminal-title">Terminal</div>
+	</div>
+	<div class="terminal-content">
+
 	<div class="container">
 		<p class="terminal-prompt">pablo@pablo:~$ bash porfolio.sh<span class="cursor">_</span></p>
 	</div>
 
 	<div class="container">
-		<nav class="ascii-nav">
-			<pre class="nav-menu">
-┌────────────────────────────────────────────────────────────────────────────────────────┐
-│     Home       About       Skills      Docs       Projects    Hobbies                  │
-└────────────────────────────────────────────────────────────────────────────────────────┘</pre>
-			<div class="nav-links">
-				<a href="index.html" class="ascii-link">[1]</a>
-				<a href="#reference_about" class="ascii-link">[2]</a>
-				<a href="#reference_cv" class="ascii-link">[3]</a>
-				<a href="#reference_proyect" class="ascii-link">[4]</a>
-				<a href="#reference_pagina" class="ascii-link">[5]</a>
-				<a href="#reference_socialnet" class="ascii-link">[6]</a>
+		<nav class="terminal-nav">
+			<div class="nav-header">
+				<span>Navigation Menu</span>
+				<button class="burger-menu" onclick="toggleMenu()">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+			<div class="nav-grid" id="navMenu">
+				<a href="index.html" class="nav-item">[1] Home</a>
+				<a href="#reference_about" class="nav-item">[2] About</a>
+				<a href="#reference_cv" class="nav-item">[3] Skills</a>
+				<a href="#reference_proyect" class="nav-item">[4] Docs</a>
+				<a href="#reference_pagina" class="nav-item">[5] Projects</a>
+				<a href="#reference_socialnet" class="nav-item">[6] Contact</a>
 			</div>
 		</nav>
 	</div>
 
 	<!-- ---------------------------------------------------------------------------------------------------------------- -->
 
-<div class="container">
+<div class="container ascii-container">
 	<pre class="ascii-blue">
 		 __    __  ______  __ 
 		|  \  |  \|      \|  \
@@ -58,8 +73,8 @@
 		 |   $$ \\$$    $$| $$ | $$ | $$
 		  \$$$$$$ \$$$$$$$ \$$  \$$  \$$</pre>
 
-	<div align="center">
-		<pre class="ascii-white">
+	<div class="ascii-center">
+		<pre class="ascii-white ascii-name">
 			       ____        __    __         ____            __     _                                	
 		         / __ \____ _/ /_  / /___     / __ \____  ____/ /____(_)___ ___  _____  ____           
 		        / /_/ / __ `/ __ \/ / __ \   / /_/ / __ \/ __  / ___/ / __ `/ / / / _ \/_  /           
@@ -82,10 +97,10 @@
 
 		<div class="container my-5" id="text_center">
 			<div class="row align-items-center">
-				<div class="col-md-4 text-center mb-4 mb-md-0">
+				<div class="col-md-4 text-center mb-4 mb-md-0 d-none d-md-block">
 					<img src="./images/pabloviolinbanana.png" class="img-fluid" alt="Pablo Rodriguez" style="max-width: 300px; opacity: 0.8; margin-right: 30px;">
 				</div>
-				<div class="col-md-8" id="character_three">
+				<div class="col-md-8 col-12" id="character_three">
 					<h3 id="reference_about" class="mb-4">About me</h3>
 					<p class="mb-3">Hello! My name is Pablo Rodriguez. I'm from Uruguay, Montevideo and I'm SRE with DevOps philosophy. I have 2 years of experience in implementing CI/CD Pipelines, Infrastructure as code and making dockerfile images on different projects.</p>
 					<p class="mb-3">My objective in this portfolio is to stand out as a complete and versatile professional IT, exchaging my abilities in creation, management, and projects. Also I look for learning more and share this process with other developers and IT students, creating a space where they investigate different technologies and good practices.</p>
@@ -256,9 +271,10 @@
 			</div>
 		</div>
 
-</body>
+	</div>
+</div>
 
-	<footer>
+<footer>
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-md-6 text-start">
@@ -285,9 +301,10 @@
 				</div>
 			</div>
 		</div>
-	</footer>
+</footer>
 
-	
+</body>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
@@ -321,5 +338,14 @@
       container.innerHTML = "<p>Error al cargar proyectos 😢</p>";
       console.error(err);
     });
+
+// Función para el burger menu
+function toggleMenu() {
+    const navMenu = document.getElementById('navMenu');
+    const burgerMenu = document.querySelector('.burger-menu');
+    
+    navMenu.classList.toggle('show');
+    burgerMenu.classList.toggle('active');
+}
 </script>
 </html>
