@@ -1,64 +1,148 @@
 # Personal Website - Pablo Rodriguez
 
-Personal portfolio with retro/terminal aesthetics showcasing my skills as SRE and DevOps Engineer.
+Portfolio personal con estética retro/terminal, construido con React + TypeScript.
 
-## 🚀 Description
+## Descripción
 
-This personal website features a unique design inspired by retro terminals with CRT effects, ASCII art, and cyberpunk aesthetics. Developed to highlight my technical skills and professional experience in a creative way.
+Este proyecto fue migrado desde una web estática a una SPA moderna con Vite. Mantiene el estilo terminal (CRT, scanlines, glow, tipografía mono) y organiza el contenido en secciones navegables.
 
-## ✨ Features
+## Stack actual
 
-- **Retro/Terminal Design**: CRT effects, scanlines and flickering
-- **ASCII Art**: Logo and graphic elements in ASCII art
-- **Responsive Design**: Adaptable to mobile, tablet and desktop
-- **ASCII Navigation**: Menu styled as terminal interface
-- **Sections**: About, Skills, Projects, Technologies, Hobbies
+- React 18
+- TypeScript
+- Vite 5
+- Tailwind CSS
+- shadcn/ui + Radix UI
+- Framer Motion
+- React Router DOM
+- Vitest + Testing Library
+- ESLint
 
-## 🛠️ Technologies
+## Secciones del sitio
 
-- HTML5
-- CSS3 (Media Queries, Animations, Grid)
-- Bootstrap 5.1.3
-- JavaScript (for dynamic projects)
+- Hero (presentación principal)
+- About Me
+- Skills
+- Experiencia
+- Proyectos
+- Contacto
 
-## 📱 Responsive Features
+## Skills destacadas
 
-- **Desktop**: Complete design with CRT effects and ASCII navigation
-- **Tablet**: Intermediate sizes, 2-column grid
-- **Mobile**: Simplified navigation, optimized ASCII art, no main image
+- Cloud: AWS, Azure, Google Cloud
+- CI/CD: GitHub Actions, GitLab CI, Azure DevOps
+- Automation: Docker, Docker Compose, Kubernetes, Helm, Terraform, Terraspace
+- Observability: Prometheus, Grafana, OpenTelemetry, Splunk
+- Scripting: Bash, Python
+- AI Tools: GitHub Copilot, Claude, Codex, OpenAI, Gemini, Amazon Q
 
-## 🎯 Objective
+## Scripts disponibles
 
-Showcase my SRE/DevOps skills in a unique way, creating a space where other developers and IT students can explore different technologies and best practices.
+```bash
+# desarrollo local (http://localhost:8080)
+npm run dev
 
-## 📂 Structure
+# build de producción
+npm run build
 
+# build en modo development
+npm run build:dev
+
+# previsualizar build
+npm run preview
+
+# lint
+npm run lint
+
+# tests
+npm run test
+npm run test:watch
 ```
+
+## Instalación
+
+```bash
+npm install
+npm run dev
+```
+
+## Cómo levantar la web
+
+### Opción 1: Desarrollo local
+
+```bash
+# 1) Instalar dependencias
+npm install
+
+# 2) Levantar servidor de desarrollo
+npm run dev
+```
+
+Luego abrí: `http://localhost:8080`
+
+### Opción 2: Producción local (build + preview)
+
+```bash
+# 1) Generar build
+npm run build
+
+# 2) Servir el build generado
+npm run preview
+```
+
+Luego abrí la URL que te muestre la consola de Vite Preview.
+
+### Opción 3: Docker
+
+```bash
+# 1) Construir imagen
+docker build -t pagina-web-personal -f dockerfile .
+
+# 2) Ejecutar contenedor
+docker run --rm -p 8082:8082 pagina-web-personal
+```
+
+Luego abrí: `http://localhost:8082`
+
+## Estructura del proyecto
+
+```text
 Pagina_Web_Personal/
+├── index.html
 ├── src/
-│   ├── index.html
-│   ├── style.css
-│   └── images/
-│       ├── icon.ico
-│       └── pabloviolinbanana.png
-└── README.md
+│   ├── main.tsx
+│   ├── App.tsx
+│   ├── index.css
+│   ├── pages/
+│   │   ├── Index.tsx
+│   │   └── NotFound.tsx
+│   ├── components/
+│   │   ├── Hero.tsx
+│   │   ├── AboutMe.tsx
+│   │   ├── Skills.tsx
+│   │   ├── Experience.tsx
+│   │   ├── Projects.tsx
+│   │   ├── Contact.tsx
+│   │   └── ui/
+│   └── test/
+├── public/
+├── vite.config.ts
+├── tailwind.config.ts
+└── vitest.config.ts
 ```
 
-## 🚀 Deployment
+## Dónde editar contenido
 
-Static page that can be deployed on:
-- GitHub Pages
-- Netlify
-- Vercel
-- AWS S3 + CloudFront
+- Textos principales y links: `src/components/*.tsx`
+- Tema, colores y efectos visuales: `src/index.css`, `tailwind.config.ts`
+- SEO/meta tags base: `index.html`
 
-## 👨💻 Author
+## Notas
 
-**Pablo Rodriguez**
-- SRE/DevOps Engineer
-- Uruguay, Montevideo
-- 2+ years of experience in CI/CD, IaC and containerization
+- El servidor de desarrollo corre en el puerto `8080` (configurado en `vite.config.ts`).
+- Hay placeholders en `index.html` (`<title>`, metadatos Open Graph/Twitter) que conviene personalizar para producción.
 
----
+## Autor
 
-*Page under constant update and design improvement*
+**Pablo Rodriguez**  
+SRE/DevOps Engineer - Montevideo, Uruguay
